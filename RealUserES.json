@@ -1,0 +1,809 @@
+{
+    "metadata": {
+        "configurationVersions": [3]
+    },
+    "id": "01264ee9-9c77-4a39-914c-49870ff43def",
+    "dashboardMetadata": {
+        "name": "Real User Monitoring (Español)",
+        "shared": false,
+        "sharingDetails": {
+            "linkShared": false,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "e_-24h to now"
+        },
+        "tags": ["Applications", "Reporting"]
+    },
+    "tiles": [{
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 798,
+            "width": 760,
+            "height": 266
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Web applications",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "PIE",
+                "series": [{
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "Apdex category",
+                        "values": ["FRUSTRATED", "SATISFIED", "TOLERATING"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1576250647244,
+                        "customColor": "#dc172a"
+                    },
+                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1576250669259,
+                        "customColor": "#2ab06f"
+                    },
+                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592937338597,
+                        "customColor": "#f5d30f"
+                    },
+                    "null¦Apdex category»UNKNOWN»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1576250655779,
+                        "customColor": "#f5d30f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Application health",
+        "tileType": "APPLICATIONS",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 532,
+            "width": 494,
+            "height": 380
+        },
+        "tileFilter": {},
+        "chartVisible": true
+    }, {
+        "name": "World map",
+        "tileType": "APPLICATION_WORLDMAP",
+        "configured": true,
+        "bounds": {
+            "top": 1064,
+            "left": 0,
+            "width": 950,
+            "height": 380
+        },
+        "tileFilter": {},
+        "assignedEntities": ["GEOLOCATION-0000000000000000", "WORLD"],
+        "metric": "APDEX"
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1064,
+            "width": 494,
+            "height": 380
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "User actions per minute",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.other.uaCount.osAndVersion",
+                    "aggregation": "NONE",
+                    "type": "AREA",
+                    "entityType": "MONITORED_ENTITY˟DEVICE_APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "MINUTE"
+                }, {
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "AREA",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "MINUTE"
+                }],
+                "resultMetadata": {
+                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937616228,
+                        "customColor": "#edd148"
+                    },
+                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937317653,
+                        "customColor": "#dc172a"
+                    },
+                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937309469,
+                        "customColor": "#2ab06f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 798,
+            "width": 760,
+            "height": 114
+        },
+        "tileFilter": {},
+        "markdown": "Dynatrace calcula [las calificaciones de Apdex](https://www.dynatrace.com/support/help/shortlink/apdex) para proporcionarle una única métrica que le informa sobre el rendimiento de su aplicación y los errores que afectan la experiencia del usuario. Los umbrales de Apdex se pueden ajustar para cada aplicación, así como para las acciones clave del usuario."
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 2432,
+            "left": 608,
+            "width": 950,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Web application errors",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.countOfErrors",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Error type",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "null¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1594892194668,
+                        "customColor": "#00a1b2"
+                    },
+                    "null¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1594892186342,
+                        "customColor": "#debbf3"
+                    },
+                    "null¦Error type»Custom»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1594892201170,
+                        "customColor": "#c9a000"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 304,
+            "width": 456,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Key user actions with low Apdex rating ",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:apps.web.action.apdex",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application_method",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": true,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 950,
+            "left": 0,
+            "width": 760,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Las [acciones clave del usuario](https://www.dynatrace.com/support/help/shortlink/user-actions#key-user-actions) le ayudan a vigilar sus acciones de usuario más importantes, como registros, pagos y búsquedas de productos. Se pueden establecer umbrales de Apdex personalizados para cada acción del usuario, y también se pueden graficar métricas de rendimiento clave para estos. "
+    }, {
+        "name": "Experiencia del Usuario",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 798,
+            "width": 760,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 2736,
+            "left": 608,
+            "width": 950,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Dynatrace captura automáticamente los errores de JavaScript y HTTP. Los errores custom también se pueden mostrar [utilizando nuestra API de JavaScript](https://www.dynatrace.com/support/help/shortlink/configure-application-errors#configure-custom-errors) . \n. Más información sobre [analizar problemas con nuestra supervisión de errores HTTP](https://www.dynatrace.com/news/blog/extended-davis-awareness-of-http-and-custom-errors/)."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1444,
+            "left": 0,
+            "width": 950,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "El widget del mapa mundial puede mostrar métricas de usuarios reales como las calificaciones de [Apdex](https://www.dynatrace.com/support/help/shortlink/apdex) de sus aplicaciones web o móviles. Alternativamente, configure esto para reflejar un aplicación específica, o haga clic para navegar a la pantalla de análisis del mapa mundial. "
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 494,
+            "left": 1064,
+            "width": 494,
+            "height": 114
+        },
+        "tileFilter": {},
+        "markdown": "Dynatrace captura [acciones del usuario](https://www.dynatrace.com/support/help/shortlink/user-actions) para todas las aplicaciones web y móviles monitorizadas. Una acción del usuario puede ser una acción de carga, una acción XHR o una acción personalizada. La duración de la acción se calcula de manera diferente para cada tipo de acción, y cada tipo tiene diferentes métricas disponibles."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 1558,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "El propósito de este dashboard es inspirar y mostrarle algunos [tiles](https://www.dynatrace.com/support/help/shortlink/pin-to-dashboard) útiles listos para usar  y [gráficos personalizados](https://www.dynatrace.com/support/help/shortlink/charts-create) que puede usar para monitorización sus aplicaciones. \n Si está vacío, es posible que desee cambiar la [management zone](https://www.dynatrace.com/support/help/shortlink/management-zones-hub)."
+    }, {
+        "name": "Key user action overview",
+        "tileType": "UEM_KEY_USER_ACTIONS",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["APPLICATION-EA7C4B59F27D43EB"]
+    }, {
+        "name": "Geo locations",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 1026,
+            "left": 0,
+            "width": 950,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Salud de aplicaciones",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 532,
+            "width": 494,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User actions",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1064,
+            "width": 494,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Errores y Crashes",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 2394,
+            "left": 608,
+            "width": 950,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 1482,
+            "left": 988,
+            "width": 570,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Key performance metrics",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.visuallyComplete.load.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "builtin:apps.web.domInteractive.load.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "builtin:apps.web.speedIndex.load.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "builtin:apps.web.firstByte.load.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937616228,
+                        "customColor": "#edd148"
+                    },
+                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937317653,
+                        "customColor": "#dc172a"
+                    },
+                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937309469,
+                        "customColor": "#2ab06f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Funnel chart",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 1900,
+            "left": 0,
+            "width": 950,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 1938,
+            "left": 0,
+            "width": 950,
+            "height": 342
+        },
+        "tileFilter": {},
+        "customName": "User sessions query results",
+        "query": "SELECT FUNNEL(useraction.isEntryAction = true AS \"First step\", useraction.duration>1000 AS \"Second step\", useraction.isExitAction=true AS \"Last step\") FROM usersession",
+        "type": "FUNNEL",
+        "limit": 50
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 2280,
+            "left": 0,
+            "width": 950,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Comprenda y optimice las rutas de sus usuarios a través de su aplicación con el [gráfico de embudo](https://www.dynatrace.com/news/blog/understand-and-optimize-user-journeys-with-funnel-charting/), lo que le ayuda a analizar las tasas de conversión de los flujos de trabajo importantes. "
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 1064,
+            "left": 988,
+            "width": 570,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Visually complete",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.load.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "dt.entity.browser",
+                        "values": ["BROWSER-EFB8A292CB368A8D", "BROWSER-FF8EAE6885DE87B3", "BROWSER-84D34A4F1D5F0E12", "BROWSER-2A6F794139C73155"],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937616228,
+                        "customColor": "#edd148"
+                    },
+                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937317653,
+                        "customColor": "#dc172a"
+                    },
+                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|MINUTE|AREA|APPLICATION": {
+                        "lastModified": 1592937309469,
+                        "customColor": "#2ab06f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Web requests y proveedores en terceros",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 1900,
+            "left": 950,
+            "width": 950,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Sesiones y Session Replay",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 1558,
+            "left": 0,
+            "width": 950,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Synthetic monitoring",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 2394,
+            "left": 0,
+            "width": 570,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 1596,
+            "left": 304,
+            "width": 342,
+            "height": 190
+        },
+        "tileFilter": {},
+        "customName": "User sessions query results",
+        "query": "SELECT userSessionId, userExperienceScore, hasSessionReplay FROM usersession ORDER by hasSessionReplay DESC, userExperienceScore",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "Metricas de rendimiento en distintas dimensiones",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 1026,
+            "left": 988,
+            "width": 570,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Key user actions",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 0,
+            "width": 760,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Terceros más utilizados",
+        "tileType": "THIRD_PARTY_MOST_ACTIVE",
+        "configured": true,
+        "bounds": {
+            "top": 1938,
+            "left": 950,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": []
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 2052,
+            "left": 1254,
+            "width": 304,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Dynatrace captura los tiempos de los recursos del W3C para brindarle desgloses detallados del rendimiento de los terceros de su aplicación web."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1786,
+            "left": 0,
+            "width": 950,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Utilice [Session Replay](https://www.dynatrace.com/support/help/shortlink/session-replay) para capturar y reproducir visualmente la experiencia digital completa de sus usuarios. La reproducción similar a una película de Session Replay le ayuda la brecha entre el código y la experiencia del usuario, al ayudarlo a identificar errores y analizar áreas de dificultad. "
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1786,
+            "left": 988,
+            "width": 570,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Con Dynatrace, puede comparar [métricas clave de rendimiento](https://www.dynatrace.com/support/help/shortlink/user-action-metrics#key-performance-metrics) para cada acción del usuario, y la duración de la acción puede se trazará en diferentes versiones de la aplicación."
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 1596,
+            "left": 646,
+            "width": 304,
+            "height": 190
+        },
+        "tileFilter": {},
+        "customName": "Sessions with replay",
+        "query": "SELECT count(*) FROM usersession where hasSessionReplay=true",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 1596,
+            "left": 0,
+            "width": 304,
+            "height": 190
+        },
+        "tileFilter": {},
+        "customName": "Total sessions",
+        "query": "SELECT count(userSessionId) FROM usersession ",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "Browser monitor",
+        "tileType": "SYNTHETIC_SINGLE_WEBCHECK",
+        "configured": true,
+        "bounds": {
+            "top": 2432,
+            "left": 266,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["SYNTHETIC_TEST-58E59497F5944E5F"],
+        "excludeMaintenanceWindows": false
+    }, {
+        "name": "Synthetic monitor health",
+        "tileType": "SYNTHETIC_TESTS",
+        "configured": true,
+        "bounds": {
+            "top": 2432,
+            "left": 0,
+            "width": 266,
+            "height": 304
+        },
+        "tileFilter": {},
+        "chartVisible": true
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 0,
+            "width": 494,
+            "height": 114
+        },
+        "tileFilter": {},
+        "markdown": "## Definición de aplicaciones \n \n Dynatrace agrupa los datos de monitorizacion de front-end en [aplicaciones](https://www.dynatrace.com/support/help/shortlink/rum-application-concept). Dynatrace monitoriza tanto las aplicaciones web como aplicaciones. "
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 0,
+            "width": 494,
+            "height": 228
+        },
+        "tileFilter": {},
+        "markdown": "## Aplicaciones web \n \n La aplicación web se supervisa con un tag JavaScript que nuestro OneAgent inyecta automáticamente. De forma predeterminada, todos los datos de supervisión se agrupan en [Mi aplicación web](https://www.dynatrace.com/support/help/shortlink/my-web-application). Puede cambiar las [reglas de detección de aplicaciones](#settings/rum/webappmonitoring;gf=all;gtf=-24h%20to%20now) para definir sus propias aplicaciones. \n \nSi no tiene acceso a su servidor web y, por lo tanto, no puede instalar OneAgent, [inserte manualmente](#install/agentless;gf=all) la etiqueta JavaScript en sus páginas web."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 0,
+            "width": 494,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "## Aplicaciones móviles \n \nDynatrace proporciona autoinstrumentación para aplicaciones de Android e iOS con una extensión manual sencilla y admite marcos multiplataforma como Cordova, Flutter, Xamarin o React Native. Comience a monitorizar sus aplicaciones implementando [OneAgent for Mobile](#mobile;gf=all)."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 2736,
+            "left": 0,
+            "width": 570,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Los monitores sintéticos son una gran adición a RUM, ya que ayudan a identificar problemas antes de que los usuarios reales se vean afectados. El navegador sintético y los monitores HTTP también monitorizan las líneas de base de rendimiento en un entorno de sala limpia. \n [Cree un monitor sintético](#newhttpmonitorwizard;gf=all) ahora. "
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1520,
+            "left": 0,
+            "width": 950,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "Dynatrace utiliza la base de datos MaxMind para asignar direcciones IP a ubicaciones geográficas. Se pueden asignar direcciones IP adicionales a [ubicaciones personalizadas](#settings/rum/geographiclocations;gf=all)."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 494,
+            "left": 532,
+            "width": 494,
+            "height": 114
+        },
+        "tileFilter": {},
+        "markdown": "El [estado de la aplicación](https://www.dynatrace.com/support/help/shortlink/problems-hub) proporciona una descripción general de todas las aplicaciones que tienen problemas abiertos. Estos problemas y sus causas fundamentales se detectan automáticamente. \nAjustar la [detección de anomalías global](#settings/anomalydetection/appl;gf=all) para aplicaciones para ajustar lo que Davis informa como problemas."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1976,
+            "left": 1254,
+            "width": 532,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Dynatrace detecta automáticamente más de [1,000 proveedores de contenido listos para usar](#settings/rum/providerbreakdown;gf=all), incluidos Google, Amazon, Facebook y muchos más."
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1406,
+            "left": 988,
+            "width": 570,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Las [métricas de rendimiento](https://www.dynatrace.com/support/help/shortlink/user-action-metrics#key-performance-metrics) difieren entre varios navegadores y plataformas. Realice un seguimiento de la coherencia del rendimiento de su sitio web y aplicaciones móviles mediante la creación de gráficos de métricas según los navegadores y los sistemas operativos."
+    }]
+}
